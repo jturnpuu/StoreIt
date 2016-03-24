@@ -49,13 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\EFRepositoryFactory.cs" />
+    <Compile Include="Helpers\EFRepositoryProvider.cs" />
+    <Compile Include="Helpers\FormattedDbEntityValidationException.cs" />
+    <Compile Include="Interfaces\IDbContext.cs" />
+    <Compile Include="Interfaces\IEFRepositoryProvider.cs" />
+    <Compile Include="Interfaces\IUOW.cs" />
     <Compile Include="Interfaces\Orders\IOrderEditRepository.cs" />
     <Compile Include="Interfaces\Orders\IOrderEditTypeRepository.cs" />
     <Compile Include="Interfaces\Orders\IOrderedProductRepository.cs" />
     <Compile Include="Interfaces\Orders\IOrderRepository.cs" />
     <Compile Include="Interfaces\Orders\IOrderTypeRepository.cs" />
     <Compile Include="Interfaces\People\IContactRepository.cs" />
-    <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Interfaces\IEFRepository.cs" />
     <Compile Include="Interfaces\People\IContactTypeRepository.cs" />
     <Compile Include="Interfaces\People\IPersonRepository.cs" />
@@ -70,11 +75,27 @@
     <Compile Include="Interfaces\Users\IUserEditTypeRepository.cs" />
     <Compile Include="Interfaces\Users\IUserRepository.cs" />
     <Compile Include="Interfaces\Users\IUserRoleRepository.cs" />
-    <Compile Include="Migrations\201603141024578_InitialDbMigration.cs" />
-    <Compile Include="Migrations\201603141024578_InitialDbMigration.Designer.cs">
-      <DependentUpon>201603141024578_InitialDbMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201603191420267_DatabaseFixDueToAnomaly.cs" />
+    <Compile Include="Migrations\201603191420267_DatabaseFixDueToAnomaly.Designer.cs">
+      <DependentUpon>201603191420267_DatabaseFixDueToAnomaly.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\MigrationsConfiguration.cs" />
+    <Compile Include="Migrations\201603201130283_FloatToDoubleFixOnModels.cs" />
+    <Compile Include="Migrations\201603201130283_FloatToDoubleFixOnModels.Designer.cs">
+      <DependentUpon>201603201130283_FloatToDoubleFixOnModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603202258008_EmployeeAndClientFixOnOrderModel.cs" />
+    <Compile Include="Migrations\201603202258008_EmployeeAndClientFixOnOrderModel.Designer.cs">
+      <DependentUpon>201603202258008_EmployeeAndClientFixOnOrderModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603202303050_RollBack.cs" />
+    <Compile Include="Migrations\201603202303050_RollBack.Designer.cs">
+      <DependentUpon>201603202303050_RollBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603211234160_BiDirectionalNavigationPropertyFixOnOrderEntity.cs" />
+    <Compile Include="Migrations\201603211234160_BiDirectionalNavigationPropertyFixOnOrderEntity.Designer.cs">
+      <DependentUpon>201603211234160_BiDirectionalNavigationPropertyFixOnOrderEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\MigrationConfiguration.cs" />
     <Compile Include="Repositories\EFRepository.cs" />
     <Compile Include="Repositories\Orders\OrderEditRepository.cs" />
     <Compile Include="Repositories\Orders\OrderEditTypeRepository.cs" />
@@ -109,8 +130,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603141024578_InitialDbMigration.resx">
-      <DependentUpon>201603141024578_InitialDbMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603191420267_DatabaseFixDueToAnomaly.resx">
+      <DependentUpon>201603191420267_DatabaseFixDueToAnomaly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603201130283_FloatToDoubleFixOnModels.resx">
+      <DependentUpon>201603201130283_FloatToDoubleFixOnModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603202258008_EmployeeAndClientFixOnOrderModel.resx">
+      <DependentUpon>201603202258008_EmployeeAndClientFixOnOrderModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603202303050_RollBack.resx">
+      <DependentUpon>201603202303050_RollBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603211234160_BiDirectionalNavigationPropertyFixOnOrderEntity.resx">
+      <DependentUpon>201603211234160_BiDirectionalNavigationPropertyFixOnOrderEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
